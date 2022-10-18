@@ -1,1 +1,3 @@
-# tarea2
+# Yulissa Nayareth Sanhueza Escares
+
+# Cristobal Marcel Contreras Gajardo
