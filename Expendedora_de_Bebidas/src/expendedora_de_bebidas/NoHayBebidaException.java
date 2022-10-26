@@ -10,9 +10,13 @@ public class NoHayBebidaException extends RuntimeException {
 
 //escribir en expendedor 
 class MyMethod {
-    public void NoBebidas(Deposito p) throws NoHayBebidaException{
-        if(p.getBebida() == null ){
+
+    public void NoBebidas(Deposito p) throws NoHayBebidaException {     
+        if (p.getBebida() == null) {
             throw new NoHayBebidaException("Se acabaron las Bebidas");
+        } else{
+            p.getBebida();
         }
+        
     }
 }

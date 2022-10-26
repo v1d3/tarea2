@@ -27,20 +27,22 @@ public class Expendedor {
     }
 
     public void ComprarBebida(Moneda m, int TipoDeBebida) {
+        MyMethod z = new MyMethod();
+        MyMethod2 z2 = new MyMethod2();
+
         Bebida b = null;
         if (m != null) {    //Dinero != de null
             if (m.getValor() - PrecioBebidas >= 0) {    //Dinero > Precio
-                if (TipoDeBebida == 1) {                       //Tipo de Bebida
-                    b = Fanta.getBebida();
+                if (TipoDeBebida == 1) {                      //Tipo de Bebida 
+                    z.NoBebidas(Fanta);
                 } else if (TipoDeBebida == 2) {
-                    b = Sprite.getBebida();
+                    z.NoBebidas(Sprite);
                 } else if (TipoDeBebida == 3) {
-                    b = Coca.getBebida();
+                    z.NoBebidas(Coca);
                 }
             }
-            else {
-                
-            }
+        } else {
+            z2.SinDinero(m);
         }
     }
 

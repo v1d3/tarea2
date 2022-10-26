@@ -11,10 +11,12 @@ public class PagoIncorrectoException extends RuntimeException {
 
 ///////////////////////////
 //escribir en expendedor 
-public void myMethod() throws PagoIncorrectoException{
+class MyMethod2 {
 
-     if (...){
+    public void SinDinero(Moneda m) throws PagoIncorrectoException {
 
-     throw new PagoIncorrectoException(" Pago Incorrecto: " +  );
-     }
+        if (m == null) {
+            throw new PagoIncorrectoException(" Pago Incorrecto");
+        }
+    }
 }
