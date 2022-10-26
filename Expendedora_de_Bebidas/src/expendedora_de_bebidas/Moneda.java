@@ -1,9 +1,8 @@
-
 package expendedora_de_bebidas;
 
+abstract class Moneda {
 
-public class Moneda {
-     public Moneda() {
+    public Moneda() {
 
     }
 
@@ -13,6 +12,7 @@ public class Moneda {
 
     public abstract int getValor(); // la clase es abstracta por eso
 }
+
 class Moneda100 extends Moneda {
 
     public Moneda100() {
