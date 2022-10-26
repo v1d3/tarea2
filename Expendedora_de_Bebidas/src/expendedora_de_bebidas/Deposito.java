@@ -13,4 +13,12 @@ public class Deposito {
     public void addBebida(Bebida x) {
         Bebidas.add(x);
     }
+    public Bebida getBebida() {
+        if(Bebidas.size() <= 0) {
+            return null;
+        } else {
+            Bebida b = Bebidas.remove(0);
+            return b;
+        }
+    }
 }
