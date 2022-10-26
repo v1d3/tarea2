@@ -1,4 +1,4 @@
-package pagoincorrectoexception;
+package expendedora_de_bebidas;
 
 public class PagoIncorrectoException extends RuntimeException {
 

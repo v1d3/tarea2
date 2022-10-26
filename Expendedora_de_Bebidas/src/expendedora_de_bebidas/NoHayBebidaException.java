@@ -1,24 +1,18 @@
-package nohaybebidaexception;
+package expendedora_de_bebidas;
 
-public class NoHayBebidaException extends RuntimeException{
+public class NoHayBebidaException extends RuntimeException {
 
-    public NoHayBebidaException(String errorMessage) {
+    public NoHayBebidaException(String message) {
 
-        super(errorMessage);
-
+        super(message);
     }
 }
 
-
-///////////////////////////
 //escribir en expendedor 
-public void myMethod() throws NoHayBebidaException{
-
-
-
-     if (...){
-
-     throw new NombreArchivoIncorrectoException(" No hay Bebida: " + NombreArchivo );
-
-}
+class MyMethod {
+    public void NoBebidas(Deposito p) throws NoHayBebidaException{
+        if(p.getBebida() == null ){
+            throw new NoHayBebidaException("Se acabaron las Bebidas");
+        }
+    }
 }
