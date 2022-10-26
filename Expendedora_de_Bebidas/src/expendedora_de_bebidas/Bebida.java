@@ -2,44 +2,49 @@ package expendedora_de_bebidas;
 
 abstract class Bebida {
 
-    public Bebida() {
+    private int serie;
 
+    public Bebida(int numSerie) {
+        this.serie = numSerie;
     }
 
-    public String Beber() {
-        return "Glu glu glu... deliciosa: ";
+    public int getSerie() {
+        return serie;
     }
+
+    public abstract String beber();
+
 }
 
-class Fanta extends Bebida {
+class CocaCola extends Bebida {
 
-    public Fanta() {
-
+    public CocaCola(int serie) {
+        super(serie);
     }
 
-    public String Beber() {
-        return super.Beber() + "Fanta";
+    public String beber() {
+        return "CocaCola";
     }
 }
 
 class Sprite extends Bebida {
 
-    public Sprite() {
-
+    public Sprite(int serie) {
+        super(serie);
     }
 
-    public String Beber() {
-        return super.Beber() + "Sprite";
+    public String beber() {
+        return "Sprite";
     }
 }
 
-class CocaCola extends Bebida {
+class Fanta extends Bebida {
 
-    public CocaCola() {
-
+    public Fanta(int serie) {
+        super(serie);
     }
 
-    public String Beber() {
-        return super.Beber() + "CocaCola";
+    public String beber() {
+        return "Fanta";
     }
 }
