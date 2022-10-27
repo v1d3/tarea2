@@ -26,23 +26,20 @@ public class Expendedor {
         }
     }
 
-    public void ComprarBebida(Moneda m, int TipoDeBebida) {
-        MyMethod z = new MyMethod();
-        MyMethod2 z2 = new MyMethod2();
-
+    public void ComprarBebida(Moneda m, int TipoDeBebida) throws NoHayBebidaException, PagoInsuficienteException, PagoIncorrectoException{
         Bebida b = null;
         if (m != null) {    //Dinero != de null
             if (m.getValor() - PrecioBebidas >= 0) {    //Dinero > Precio
                 if (TipoDeBebida == 1) {                      //Tipo de Bebida 
-                    z.NoBebidas(Fanta);
+                    b = Fanta.getBebida();
                 } else if (TipoDeBebida == 2) {
-                    z.NoBebidas(Sprite);
+                    b = Sprite.getBebida();
                 } else if (TipoDeBebida == 3) {
-                    z.NoBebidas(Coca);
+                    b = Coca.getBebida();
                 }
             }
         } else {
-            z2.SinDinero(m);
+            
         }
     }
 
