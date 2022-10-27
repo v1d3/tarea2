@@ -7,16 +7,3 @@ public class NoHayBebidaException extends RuntimeException {
         super(message);
     }
 }
-
-//escribir en expendedor 
-class MyMethod {
-
-    public void NoBebidas(Deposito p) throws NoHayBebidaException {     
-        if (p.getBebida() == null) {
-            throw new NoHayBebidaException("Se acabaron las Bebidas");
-        } else{
-            p.getBebida();
-        }
-        
-    }
-}
