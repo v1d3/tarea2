@@ -6,7 +6,7 @@ public class Comprador {
     private int vuelto;
 
     public Comprador(Moneda m, int cualBebida, Expendedor exp) {
-        b = exp.comprarBebida(m, cualBebida);
+        b = exp.ComprarBebida(m, cualBebida);
         vuelto = 0;
         if (m != null) {
             m = exp.getVuelto();

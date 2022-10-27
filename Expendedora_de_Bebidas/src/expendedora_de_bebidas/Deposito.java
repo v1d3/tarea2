@@ -10,11 +10,12 @@ public class Deposito {
         Bebidas = new ArrayList();
     }
 
-    public void addBebida(Bebida x) {
-        Bebidas.add(x);
+    public void addBebida(Bebida b) {
+        Bebidas.add(b);
     }
+
     public Bebida getBebida() {
-        if(Bebidas.size() <= 0) {
+        if (Bebidas.size() <= 0) {
             return null;
         } else {
             Bebida b = Bebidas.remove(0);
