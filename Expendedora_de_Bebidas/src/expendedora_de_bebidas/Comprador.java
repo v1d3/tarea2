@@ -5,27 +5,28 @@ public class Comprador {
     private Bebida b;
     private int vuelto;
 
-    public Comprador(Moneda m, int cualBebida, Expendedor ex) {
-        b = ex.ComprarBebida(m, cualBebida);
+    public Comprador(Moneda m, int cualBebida, Expendedor exp) {
         vuelto = 0;
-        if (m != null) {
-            m = ex.getVuelto();
-            while (m != null) {
+        b = exp.ComprarBebida(m, cualBebida);
+        if(m != null){
+            m = exp.getVuelto();
+            while( m != null){
                 vuelto = vuelto + m.getValor();
-                m = ex.getVuelto();
+                m = exp.getVuelto();
             }
         }
     }
 
-    public int VueltoObtenido() {
+    public int CuantoVuelto() {
         return vuelto;
     }
 
-    public String TipoBebida() {
+    public String queBebiste() {
         if (b != null) {
             return b.beber();
         } else {
             return null;
         }
+
     }
 }

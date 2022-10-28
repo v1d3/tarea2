@@ -42,18 +42,41 @@ public class Expendedor {
                 } else if (TipoDeBebida == 3) {
                     b = Coca.getBebida();
                 } else {              //Si el numero de deposito es distinto a 1, 2 o 3
-                    throw new NoHayBebidaException("NoHayBebidaException");
+                    try{
+                        
+                    }catch(NoHayBebidaException ex){
+                        return null;
+                    }
+                    //throw new NoHayBebidaException("NoHayBebidaException");
                 }
                 if (b != null) { //Si hay bebida en algun deposito
                     for (int i = 100; i <= m.getValor() - PrecioBebidas; i = i + 100) {  //Agregar el sobrante (Vuelto en el futuro) a un array para luego obtenerlo en monedas de 100
-                        DepositoMonedas.add(new Moneda100() );
+                        DepositoMonedas.add(new Moneda100());
+                    }
+                } else {    //No hay Bebidas
+                    try{
+                        DepositoMonedas.add(m);
+                    }catch(NoHayBebidaException ex){
+                        return null;
                     }
                 }
             } else {     //Dinero < Precio
-                throw new PagoInsuficienteException("Dinero insuficiente");
+                try{
+                    DepositoMonedas.add(m);
+                }catch(PagoInsuficienteException ex1){
+                    return null;
+                }
+                //DepositoMonedas.add(m);
+                //throw new PagoInsuficienteException("Dinero insuficiente");
             }
         } else {    //Dinero == null
-            throw new PagoIncorrectoException(" Pago Incorrecto");
+            try{
+                DepositoMonedas.add(m);
+            }catch(PagoIncorrectoException ex2){
+                return null;
+            }
+            //DepositoMonedas.add(m);
+            //throw new PagoIncorrectoException(" Pago Incorrecto");
         }
         return b;
     }
